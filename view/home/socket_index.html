@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.io</title>
+</head>
+<body>
+<div id="message"></div>
+<div><input type="text" id="send_box"></div>
+<div><button onclick="send()">发送</button></div>
+<script src="/static/js/socket.io.js"></script>
+<script src="/static/js/jquery-3.1.1.min.js"></script>
+<script>
+    var socket = io("http://localhost:8360");
+    //监听事件
+    socket.on("adduser", function(data) {
+        console.log('收到：' + data);
+        var htm = $('#message').html();
+        $('#message').html(htm + '<br/>' + data);
+    });
+
+    function send() {
+        var meg = $('#send_box').val();
+        console.log(socket.id+'发送消息:'+meg);
+        socket.emit('adduser', meg);
+    }
+</script>
+</body>
+</html>
