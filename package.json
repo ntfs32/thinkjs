@@ -34,6 +34,8 @@
     "istanbul": "0.4.0",
     "mocha": "1.20.1"
   },
-  "repository": "",
-  "license": "MIT"
+  "repository": "git@github.com:ntfs32/thinkjs.git",
+  "license": "MIT",
+  "main": "www/production.js",
+  "author": "shaddock_hu <shaddock_hu@adsame.com>"
 }

@@ -84,7 +84,7 @@ export default class extends think.service.base {
     if (method === 'POST') {
       return agent(method, serviceurl)
         .send(params)
-        .set('content-type', 'application/x-www-form-urlencoded')
+        .set('content-type', 'application/json')
         .set('cache-control', 'no-cache')
         .set('Content-Length', params.length).end().then(function (data) {
         return data.text
