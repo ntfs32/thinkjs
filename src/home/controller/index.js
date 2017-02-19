@@ -9,7 +9,6 @@ export default class extends Base {
   init(...args){
     super.init(...args)
      let HttpClient = think.service('http_client');
-     this.httpclient = new HttpClient({cert:'/static/srca.cer'});
   }
   /**
    * index action

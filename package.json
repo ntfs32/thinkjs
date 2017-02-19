@@ -1,7 +1,7 @@
 {
   "name": "thinkjs-application",
   "description": "application created by thinkjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "node www/development.js",
     "compile": "babel src/ --out-dir app/",
@@ -13,6 +13,7 @@
     "babel-runtime": "6.x.x",
     "crypto": "^0.0.3",
     "promise": "^7.1.1",
+    "samman_auth": "^1.0.0",
     "socket.io": "^1.3.7",
     "socket.io-redis": "^4.0.0",
     "source-map-support": "0.4.0",

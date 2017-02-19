@@ -1,13 +1,13 @@
 'use strict'
 
 import Base from './base.js'
-import SammanClient from '../../common/service/samman_client' //公共方式
+import SammanClient from 'samman_auth' // 私有认证库
 export default class extends Base {
   init(http){
     super.init(http)
     let SammanService = think.service('samman_auth') // thinkjs 服务类
-    //  this.instance = new SammanClient('http://samman.adsame.com/index.php/api', '6c4f1a3dc2c6d4e97f69', 'yidongnew.adsame.com')
-    this.instance = new SammanService();
+     this.instance = new SammanClient('http://samman.adsame.com/index.php/api', '6c4f1a3dc2c6d4e97f69', 'yidongnew.adsame.com')
+    // this.instance = new SammanService();
   }
   async listAction () {
     const list = await this.instance.getlist()
@@ -15,8 +15,8 @@ export default class extends Base {
   }
 
   async loginAction () {
-    const result = await this.instance.login('shaddock_hu', '***')
-    return result ? this.success('认证成功'):this.error('认证失败')
+    const result = await this.instance.login('shaddock_hu', 'sdg789037748')
+    return result.login ? this.success(result.message):this.error(result.message)
   }
 
   testAction(){
